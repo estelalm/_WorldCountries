@@ -8,6 +8,10 @@ async function getCountries(){
     return countries
 } 
 
+// function createCountryCard(){
+
+// }
+
 function createCountry(country){
 
     const container = document.getElementById('countries-container')
@@ -75,26 +79,20 @@ function createCountry(country){
 
     let languages = document.createElement('p')
     let language = country.languages
-    let showLanguages
+    let showLanguages = []
     for(let prop in language){
-        showLanguages += language[prop] + ', '
-
+        let languageItem = language[prop]
+        showLanguages.push(languageItem)
     }
-    languages.textContent = "Languages: " + showLanguages.replace('undefined', '')
+
+    languages.textContent = "Languages: " + showLanguages.join(', ')
 
     info.replaceChildren(capital, area, population, gentilic, currencies, languages)
 
     let borderButton = document.createElement('div')
     borderButton.textContent = 'Borders'
     let borderCard = document.createElement ('p')
-    borderCard.textContent = country.borders
-
-    // let borderContent
-    // borderCard.forEach(function linkBorder{
-        
-    //     document.createElement('a')
-
-    // })
+    borderCard.textContent = country.borders.join(', ')
 
     borderButton.appendChild(borderCard)
 
@@ -112,24 +110,60 @@ function createCountry(country){
 }
 
 
-function search (){
+// 
 
+function search(countries){
+
+    const searchInput = document.getElementById('search-bar')
+    const resultsBox = document.getElementById('search-result')
+
+    let countriesNameArray = []
+    countries.forEach(function(country){
+         let countriesNames = Object.values(country.name)
+         let common = countriesNames[0]
+         let ofc = countriesNames[1]
+         countriesNames[2] = " "
+         countriesNameArray.push(common, ofc)
+    })
+
+    searchInput.onkeyup = function(){
+    let results = []
+    let input = searchInput.value
+    console.log(input)
+     if(input.length){
+
+        results = countriesNameArray.filter((keyword) =>{
+          return keyword.toLowerCase().includes(input.toLowerCase())
+         })
+     }
+     console.log(results)
+     displayResult(results)
+}
+
+    //função pra colocar o valor clicado na barra de pesquisa
+    function selectInput(){
+        searchInput.value = list.innerHTML
+    }
+
+    function displayResult(results){
+
+        let content = results.map((list) => {
+            //criar os itens da pesquisa e chamar a função que faz o nome clicado preencher a barra de pesquisa
+            return `<li class="">${list}</li>`
+        })
+
+        //lista dentro da caixa de resultados
+        resultsBox.innerHTML = `<ul>${content.join('')}</ul>`
+    }
 
 }
 
-const searchInput = document.getElementById('search-bar')
 
-
-searchInput.addEventListener('input', e =>{
-
-    const value = e.target.value
-    console.log = value
-
-})
-
+//
 async function loadCountries(){
     const countries = await getCountries()
     countries.forEach(createCountry)
+    search(countries)
 }
 
 loadCountries()

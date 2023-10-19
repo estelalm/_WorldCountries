@@ -1,5 +1,6 @@
 :root{
     --escuro: #1F243E;
+    --azulEscuro: #cbd4eb;
     --azul: #E0E9FF;
     --branco: #E0E0FF;
     --texto: 'Shippori Antique B1', sans-serif;
@@ -91,6 +92,9 @@ main{
     font-size: 1vw;
     /* font-family: var(--texto); */
 }
+.search-bar:focus{
+    outline-style: none;
+}
 .search-container img{
     width: 5%;
 }
@@ -104,6 +108,27 @@ main{
 }
 .search-button img{
     width: 60%;
+}
+#search-result{
+    position: absolute;
+    background-color: var(--azul);
+    border-top: solid var(--escuro) 1px;
+    width: 37.6vw;
+    top: 30%;
+    padding: 1vw;
+    font-size: 1.2vw;
+    max-height: 60%;
+    overflow: hidden;
+}
+#search-result ul{
+    list-style: none;
+}
+#search-result li{
+    padding: 2%;
+}
+#search-result li:hover{
+    cursor: pointer;
+    background-color: var(--azulEscuro);
 }
 
 .countries-container{
