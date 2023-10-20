@@ -181,9 +181,12 @@ function search(countries){
 
             if(countryListed.classList == 'clicked')
                 countryListed.classList.remove('clicked')
+
+                resultsBox.classList.remove('shown')
+                resultsBox.classList.add('off')
           })
 
-          
+
         })
     }
 }
