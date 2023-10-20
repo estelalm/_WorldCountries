@@ -1,6 +1,7 @@
 'use strict'
 
 async function getCountry(){
+    const countryName = localStorage.getItem('country-name')
     const endPoint = "https://restcountries.com/v3.1/name/" + countryName
     const response = await fetch(endPoint)
     const country = await response.json()
@@ -9,7 +10,7 @@ async function getCountry(){
   }
 
 function createCountryCard(country){
-
+ 
     const infoContainer = document.getElementById('info-container')
 
     const firstRow = document.createElement('div')

@@ -47,22 +47,24 @@ function displayResult(results){
           return `<li class="country-search"><a class="country-link" href="/html/country.html">${list}</a></li>`
       })
 
+      resultsBox.innerHTML = `<ul>${content.join('')}</ul>`
+
       //clicar e pegar o nome do país, que vai pra pagina e carrega as coisas lá
       const countryList = document.querySelectorAll('.country-search')
       countryList.forEach(function(countryListed){
-        console.log(countryListed)
         countryListed.addEventListener('click', function(){
-          countryListed.classList.add('TESTE')
-           const countryLink = document.querySelectorAll('.country-link')
-           const clickedCountryName = countryLink.textContent
-           //mandar o nome do pais que foi clicado.......................................................
-           localStorage.setItem('country-name', clickedCountryName)
-           console.log(countryLink.textContent)
+          countryListed.classList.add('clicked')
+            const countryLink = document.querySelector('.clicked .country-link')
+            countryLink.classList.add('teste')
+          const clickedCountryName = countryLink.textContent
+          //  //mandar o nome do pais que foi clicado.......................................................
+          localStorage.setItem('country-name', clickedCountryName)
+          console.log(localStorage.getItem('country-name'))
         })
       })
 
       //lista dentro da caixa de resultados
-      resultsBox.innerHTML = `<ul>${content.join('')}</ul>`
+
   }
 }
 
