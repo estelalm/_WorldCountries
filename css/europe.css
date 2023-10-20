@@ -130,6 +130,12 @@ main{
     cursor: pointer;
     background-color: var(--azulEscuro);
 }
+.off{
+    display: none;
+}
+.shown{
+    display: block;
+}
 
 .countries-container{
     width: 100%;

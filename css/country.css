@@ -49,6 +49,7 @@ h1{
     place-self: end;
     height: 10vh;
     width: 40%;
+    line-height: 8vh;
 }
 
 main{

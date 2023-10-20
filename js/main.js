@@ -4,7 +4,6 @@ async function getCountries(){
   const endPoint = "https://restcountries.com/v3.1/all"
   const response = await fetch(endPoint)
   const countries = await response.json()
-  console.log(countries)
   return countries
 }
 
@@ -62,9 +61,6 @@ function displayResult(results){
           console.log(localStorage.getItem('country-name'))
         })
       })
-
-      //lista dentro da caixa de resultados
-
   }
 }
 
