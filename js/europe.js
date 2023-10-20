@@ -12,6 +12,10 @@ async function getCountries(){
 
 // }
 
+function createCountryCard(country){
+
+}
+
 function createCountry(country){
 
     const container = document.getElementById('countries-container')
@@ -155,11 +159,9 @@ function search(countries){
         //lista dentro da caixa de resultados
         resultsBox.innerHTML = `<ul>${content.join('')}</ul>`
     }
-
 }
 
 
-//
 async function loadCountries(){
     const countries = await getCountries()
     countries.forEach(createCountry)
