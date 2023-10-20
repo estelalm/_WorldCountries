@@ -36,15 +36,9 @@ async function getCountries(){
     resultsBox.classList.add('off')
     resultsBox.classList.remove('shown')
    }
-   console.log(results)
    displayResult(results)
 }
 
-
-  //função pra colocar o valor clicado na barra de pesquisa //nofunciona
-  function selectInput(){
-      searchInput.value = list.innerHTML
-  }
 
 function displayResult(results){
 
@@ -53,37 +47,30 @@ function displayResult(results){
           return `<li class="country-search"><a class="country-link" href="/html/country.html">${list}</a></li>`
       })
 
-      //event listener pra clicar e pegar o nome do país, que vai pra pagina do país
+      //clicar e pegar o nome do país, que vai pra pagina e carrega as coisas lá
       const countryList = document.querySelectorAll('.country-search')
-
-      let countryName
-
-      countryList.forEach((countryListed) =>{
-        countryListed.addEventListener('click', () =>{
-          countryListed.classList.add('clicked')
-          const countryLink = document.querySelectorAll('.clicked .country-link')
-           countryName = countryLink.textContent
-           console.log(countryName)
+      countryList.forEach(function(countryListed){
+        console.log(countryListed)
+        countryListed.addEventListener('click', function(){
+          countryListed.classList.add('TESTE')
+           const countryLink = document.querySelectorAll('.country-link')
+           const clickedCountryName = countryLink.textContent
+           //mandar o nome do pais que foi clicado.......................................................
+           localStorage.setItem('country-name', clickedCountryName)
+           console.log(countryLink.textContent)
         })
       })
 
       //lista dentro da caixa de resultados
       resultsBox.innerHTML = `<ul>${content.join('')}</ul>`
-
-      return countryName
   }
 }
 
 
 async function loadSearchItems(){
   const countries = await getCountries()
-  let countrynamez = search(countries)
   search(countries)
-
-  return countrynamez
 }
-
-let countryNameTest = loadSearchItems
 loadSearchItems()
 
 

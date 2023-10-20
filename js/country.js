@@ -1,9 +1,7 @@
 'use strict'
 
 async function getCountry(){
-    const countryName = localStorage.getItem('countryNameTest')
-    console.log(countryName)
-    const endPoint = "https://restcountries.com/v3.1/name/"+countryName
+    const endPoint = "https://restcountries.com/v3.1/name/" + countryName
     const response = await fetch(endPoint)
     const country = await response.json()
     console.log(country)
