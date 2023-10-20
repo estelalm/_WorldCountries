@@ -128,10 +128,14 @@ main{
 }
 #search-result li{
     padding: 2%;
+    width: 100%;
 }
 #search-result li:hover{
     cursor: pointer;
     background-color: var(--azulEscuro);
+}
+#search-result li a{
+    width: 100%;
 }
 .off{
     display: none;

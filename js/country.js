@@ -1,19 +1,18 @@
 'use strict'
 
-
-
-async function getCountries(){
+async function getCountry(){
+    const countryName = localStorage.getItem('countryNameTest')
+    console.log(countryName)
     const endPoint = "https://restcountries.com/v3.1/name/"+countryName
     const response = await fetch(endPoint)
-    const countries = await response.json()
-    console.log(countries)
+    const country = await response.json()
+    console.log(country)
     return country
   }
 
 function createCountryCard(country){
 
     const infoContainer = document.getElementById('info-container')
-
 
     const firstRow = document.createElement('div')
     firstRow.classList.add('first-row')
@@ -90,15 +89,11 @@ function createCountryCard(country){
     mapsIcon.src = '/img/maps.svg'
     maps.appendChild(mapsIcon)
     maps.href = "https://google.com/maps/place/" + country.name.common.replace('', '+')
-
-    
-    })
     
 }
 
-function loadCountry{
-
-    const country = getCountries()
+function loadCountry(){
+    const country = getCountry()
     createCountryCard(country)
 }
 

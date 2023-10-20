@@ -8,16 +8,13 @@ async function getCountries(){
   return countries
 }
 
-function search(countries){
+ function search(countries){
 
   const searchInput = document.getElementById('search-bar')
   const resultsBox = document.getElementById('search-result')
 
-
-  console.log(typeof(countries))
   let countriesNameArray = []
   countries.forEach(function(country){
-    console.log(country)
        let countriesNames = Object.values(country.name)
        let common = countriesNames[0]
        let ofc = countriesNames[1]
@@ -43,32 +40,50 @@ function search(countries){
    displayResult(results)
 }
 
-  
 
   //função pra colocar o valor clicado na barra de pesquisa //nofunciona
   function selectInput(){
       searchInput.value = list.innerHTML
   }
 
-  function displayResult(results){
+function displayResult(results){
 
       let content = results.map((list) => {
           //criar os itens da pesquisa e chamar a função que faz o nome clicado preencher a barra de pesquisa
-          return `<li class="country-search"><a href="/html/country.html">${list}</a></li>`
+          return `<li class="country-search"><a class="country-link" href="/html/country.html">${list}</a></li>`
       })
 
       //event listener pra clicar e pegar o nome do país, que vai pra pagina do país
+      const countryList = document.querySelectorAll('.country-search')
+
+      let countryName
+
+      countryList.forEach((countryListed) =>{
+        countryListed.addEventListener('click', () =>{
+          countryListed.classList.add('clicked')
+          const countryLink = document.querySelectorAll('.clicked .country-link')
+           countryName = countryLink.textContent
+           console.log(countryName)
+        })
+      })
 
       //lista dentro da caixa de resultados
       resultsBox.innerHTML = `<ul>${content.join('')}</ul>`
+
+      return countryName
   }
 }
 
+
 async function loadSearchItems(){
   const countries = await getCountries()
+  let countrynamez = search(countries)
   search(countries)
+
+  return countrynamez
 }
 
+let countryNameTest = loadSearchItems
 loadSearchItems()
 
 
@@ -126,3 +141,4 @@ function showMore(){
   moreInfo.classList.toggle('on')
 }
 moreButton.addEventListener('click', showMore)
+
