@@ -16,9 +16,9 @@ async function getCountries(){
   countries.forEach(function(country){
        let countriesNames = Object.values(country.name)
        let common = countriesNames[0]
-       let ofc = countriesNames[1]
+      //  let ofc = countriesNames[1]
        countriesNames[2] = " "
-       countriesNameArray.push(common, ofc)
+       countriesNameArray.push(common)
   })
 
   searchInput.onkeyup = function(){
@@ -34,7 +34,14 @@ async function getCountries(){
    }else{
     resultsBox.classList.add('off')
     resultsBox.classList.remove('shown')
-   }
+   }´
+
+   const body = document.getElementsByTagName('body')
+
+   body.addEventListener('click', () =>{
+      resultsBox.classList.remove('shown')
+      classList.add('off')
+   })
    displayResult(results)
 }
 
@@ -46,7 +53,7 @@ function displayResult(results){
           return `<li class="country-search"><a class="country-link" href="/html/country.html">${list}</a></li>`
       })
 
-      resultsBox.innerHTML = `<ul>${content.join('')}</ul>`
+      resultsBox.innerHTML = `<ul>${content.join('')}</ul>`    
 
       //clicar e pegar o nome do país, que vai pra pagina e carrega as coisas lá
       const countryList = document.querySelectorAll('.country-search')

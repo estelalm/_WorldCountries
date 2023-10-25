@@ -84,7 +84,30 @@ function createCountryCard(country){
     console.log(typeof(borderValues))
     console.log(borderValues)
        try {
-        borderCard.textContent = borderValues.join(', ')  
+        // borderCard.textContent = borderValues.join(', ')  
+        borderValues.forEach(function(border){
+            let count
+            if(count == borderValues.length -1)
+            borderCard.innerHTML = `<a href="/html/country.html" class="border-link">${border}</a>`
+            else
+            borderCard.innerHTML = `<a href="/html/country.html" class="border-link">${border}</a>, `
+            count++
+        })
+
+        const borderList = document.querySelectorAll('border-link')
+        borderList.forEach(function(borderListed){
+            borderListed.addEventListener('click', function(){
+              borderListed.classList.add('clicked')
+                const borderLink = document.querySelector('.clicked .border-link')
+                borderLink.classList.add('teste')
+              const clickedBorder = borderLink.textContent
+              //  //mandar o nome do pais que foi clicado.......................................................
+              localStorage.setItem('country-name', clickedBorder)
+              console.log(localStorage.getItem('country-name'))
+            })
+          })
+
+
        } catch (e) {
            borderCard.textContent = "No borders to this country"
        }

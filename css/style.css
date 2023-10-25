@@ -116,7 +116,7 @@ main{
     width: 32vw;
     top: 42%;
     padding: 1vw;
-    height: 20vh;
+    max-height: 20vh;
     font-size: 1vw;
     max-height: 60%;
     overflow: hidden;

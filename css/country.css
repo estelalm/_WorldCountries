@@ -137,7 +137,8 @@ hr{
     display: none;
 }
 .info-footer div:hover > p{
-    display: block;
+    display: flex;
+    align-items: center
 }
 .info-footer a{
     height: 100%;
