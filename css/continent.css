@@ -1,0 +1,260 @@
+:root{
+    --escuro: #1F243E;
+    --azulEscuro: #cbd4eb;
+    --azul: #E0E9FF;
+    --branco: #E0E0FF;
+    --texto: 'Shippori Antique B1', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--azul);
+
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+header{
+    display: flex;   
+    width: 100%;
+    justify-content: space-between;
+}
+.home{
+    display: flex;
+    align-items: center;
+    font-size: 2vw;
+    gap: 1vw;
+    padding: 0.4vw;
+}
+.home img{
+    height: 10vh;
+}
+
+h1{
+    background-color: var(--escuro);
+    padding: .4vw 2vw;
+    letter-spacing: 0.2vw;
+    color: var(--azul);
+    font-family: var(--texto);
+    place-self: end;
+
+}
+
+main{
+    width: 100%;
+    height: 90%;
+    padding: 4vw 2vw 1vw 2vw;
+    font-family: var(--texto);
+    color: var(--escuro);
+    background-color: var(--azul);
+}
+
+.container{
+    background-color: var(--escuro);
+    width: 100%;
+    height: 96%;
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    padding: 1vw;
+    gap: 1vw;
+}
+.countries-side{
+    display: grid;
+    grid-template-rows: 10% 1fr;
+    gap: 2%;
+    overflow: hidden;
+}
+.search-container{
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: var(--azul);
+    border: solid var(--escuro) 1px;
+    height: 8vh;
+    width: 100%;
+    gap: 2%;
+}
+.search-bar{
+    background-color: transparent;
+    border: transparent;
+    width: 90%;
+    height: 100%;
+    padding: 1vw;
+    font-size: 1vw;
+    /* font-family: var(--texto); */
+}
+.search-bar:focus{
+    outline-style: none;
+}
+.search-container img{
+    width: 5%;
+}
+.search-button{
+    background-color: transparent;
+    width: 10%;
+    border: none;
+}
+.search-button:hover{
+    cursor: pointer;
+}
+.search-button img{
+    width: 60%;
+}
+#search-result{
+    position: absolute;
+    background-color: var(--azul);
+    border-top: solid var(--escuro) 1px;
+    width: 37.6vw;
+    top: 30%;
+    padding: 1vw;
+    font-size: 1.2vw;
+    max-height: 60%;
+    overflow: hidden;
+}
+#search-result ul{
+    list-style: none;
+}
+#search-result li{
+    padding: 2%;
+}
+#search-result li:hover{
+    cursor: pointer;
+    background-color: var(--azulEscuro);
+}
+.off{
+    display: none;
+}
+.shown{
+    display: block;
+}
+
+.countries-container{
+    width: 100%;
+    background-color: var(--azul);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2vw;
+    gap: 1vw;
+    overflow-y: scroll;
+    justify-content: space-evenly;
+}
+.country{
+    width: 10vw;
+    height: 10vh;
+    background-color: black;
+    background-position: center;
+    background-size: cover;
+    transition: 0.2s;
+}
+.country:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.country img{
+    width: 100%;
+    height: 100%;
+    border: solid 1px var(--escuro);
+}
+.info-container{
+    background-color: var(--azul);
+    padding: 1vw 2vw;
+    font-size: 2vw;
+    display: grid;
+    grid-template-rows: 14% 8% 1px 1fr 10%;
+}
+.info-container .first-row{
+    display: flex;
+    gap: 1vw;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.smaller{
+    font-size: 2.6vw;
+}
+.info-container .first-row img{
+    height: 10vh;
+    border: solid 2px var(--escuro);
+}
+h3{
+    font-size: 1.8vw;
+}
+
+hr{
+    border: solid 1px var(--escuro);
+    margin: 2vh 0;
+}
+
+.info{
+    padding: 2vw 1vw;
+    font-size: 1.8vw;
+}
+
+.info-footer{
+    display: flex;
+    justify-content: space-between;
+    height: 6vh;
+    align-items: center;
+    place-self: end;
+    width: 100%;
+}
+.info-footer div{
+    height: 100%;
+    width: 20%;
+    position: relative;
+    background-color: var(--escuro);
+    color: var(--branco);
+    text-align: center;
+}
+.info-footer div p{
+    background-color: var(--azul);
+    border: solid 1px var(--escuro);
+    position: absolute;
+    color: var(--escuro);
+    height: 20vh;
+    width: 28vw;
+    padding: 1vw;
+    word-wrap: break-word;
+    bottom: 90%;
+    left: 50%;
+    display: none;
+}
+.info-footer div:hover > p{
+    display: block;
+}
+.info-footer a{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+.info-footer a img {
+    height: 100%;
+}
+
+
+
+/*scroll*/
+*::-webkit-scrollbar {
+    height: 7px;
+    width: 7px;
+  }
+  *::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background-color: var(--branco);
+  }
+  *::-webkit-scrollbar-track:hover {
+    background-color: var(--azul);
+  }
+  *::-webkit-scrollbar-thumb {
+    border-radius: 1px;
+    background-color: var(--escuro);
+  }

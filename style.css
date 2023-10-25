@@ -1,0 +1,239 @@
+:root{
+    --escuro: #1F243E;
+    --azul: #E0E9FF;
+    --azulEscuro: #cbd4eb;
+    --branco: #E0E0FF;
+    --texto: 'Shippori Antique B1', sans-serif;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--azul);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+    font-family: var(--texto);
+    color: var(--escuro);
+}
+a{
+    text-decoration: none;
+    color: var(--escuro);
+}
+
+header{
+    display: flex;
+    width: 32vw;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    font-size: 1.6vw;
+    gap: 1vw;
+}
+.logo img{
+    height: 8vh;
+}
+
+.more{
+    height: 6vh;
+    background-color: var(--escuro);
+    border: none;
+    color: var(--branco);
+    font-size: 2vw;
+    padding: 1vw;
+    line-height: 1vw;
+    font-family: var(--texto);
+    bottom: 10%;
+    position: relative;
+}
+.more p{
+    position: absolute;
+    color: var(--escuro);
+    font-size: 1.4vw;
+    width: 16vw;
+    left: 4vw;
+    line-height: 4vh;
+    display: none;
+}
+.more p img{
+    height: 4vh;
+}
+.more .on{
+    display: block;
+}
+main{
+    display: grid;
+    gap: 1vh;
+}
+
+
+.search-container{
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: var(--branco);
+    border: solid var(--escuro) 1px;
+    height: 8vh;
+    width: 32vw;
+    gap: 2%;
+}
+.search-bar{
+    background-color: transparent;
+    border: transparent;
+    width: 90%;
+    height: 100%;
+    padding: 1vw;
+    font-size: 1vw;
+}
+.search-bar:focus{
+    outline-style: none;
+}
+.search-bar:focus > .search-container{
+    border: solid 6px var(--escuro);
+}
+.search-container img{
+    width: 5%;
+}
+::-webkit-input-placeholder {
+    color: var(--escuro);
+    font-family: var(--texto);
+ }
+ 
+ #search-result{
+    background-color: var(--branco);
+    border-top: solid var(--escuro) 1px;
+    width: 32vw;
+    top: 42%;
+    padding: 1vw;
+    height: 20vh;
+    font-size: 1vw;
+    max-height: 60%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+}
+#search-result ul{
+    list-style: none;
+}
+#search-result li{
+    padding: 2%;
+    width: 100%;
+}
+#search-result li:hover{
+    cursor: pointer;
+    background-color: var(--azulEscuro);
+}
+#search-result li a{
+    width: 100%;
+}
+.off{
+    display: none;
+}
+.shown{
+    display: block;
+}
+
+.container{
+    width: 32vw;
+    height: 32vh;
+    display: flex;
+    border: solid 1px var(--escuro);
+}
+
+.arrow{
+    height: 100%;
+    width: 10%;
+    padding: 0.4vw;
+    border: none;
+    background-color: var(--escuro);
+}
+.arrow img{
+    width: 90%;
+}
+#next-arrow{
+    transform: rotate(180deg);
+}
+
+.display{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    background-color: white;
+}
+
+.continent{
+    display: none;
+    transition: 0.6s;
+    width: 100%;
+    height: 100%;
+    place-content: center;
+}
+h3{
+    position: relative;
+    bottom: 50%;
+    left: 6%;
+    font-size: 1.4vw;
+}
+.continent img{
+    width: 100%;
+    height: 100%;
+    /* transition: 0.5s; */
+}
+.active{
+    display: grid;
+    /* animation: side 0.1s ; */
+}
+/* @keyframes side{
+    from{
+        transform: translateX(10vw);
+        opacity: 0;
+    } to{
+        
+    }
+} */
+
+.button{
+    background-color: var(--azul);
+    height: 11%;
+    width: 5%;
+    border-radius: 50px;
+}
+
+
+@media(max-width: 800px){
+    header{
+        width: 64vw;
+    }
+    h1{
+        font-size: 8vw;
+    }
+    .search-container{
+        display: flex;
+        align-items: center;
+        position: relative;
+        background-color: var(--branco);
+        border: solid var(--escuro) 1px;
+        height: 6vh;
+        width: 64vw;
+        gap: 2%;
+    }
+    .container{
+        width: 64vw;
+        height: 64vw;
+        display: flex;
+        border: solid 1px var(--escuro);
+    }
+}

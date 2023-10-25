@@ -1,11 +1,11 @@
 'use strict'
 
-// async function getCountries(){
-//     const endPoint = "https://restcountries.com/v3.1/region/europe"
-//     const response = await fetch(endPoint)
-//     const countries = await response.json()
-//     return countries
-// } 
+async function getCountries(){
+    const endPoint = "https://restcountries.com/v3.1/region/oceania"
+    const response = await fetch(endPoint)
+    const countries = await response.json()
+    return countries
+} 
 // import { createCard } from "./createCountryCard";
 
 function createCountryCard(country){
@@ -190,8 +190,7 @@ function search(countries){
 
 
 async function loadCountries(){
-    const countries = localStorage.getItem('getEurope')
-    console.log(countries)
+    const countries = await getCountries()
     countries.forEach(createCountry)
     search(countries)
 }

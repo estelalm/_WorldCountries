@@ -1,17 +1,4 @@
-'use strict'
-
-async function getCountry(){
-    const countryName = localStorage.getItem('country-name')
-    const endPoint = "https://restcountries.com/v3.1/name/" + countryName
-    const response = await fetch(endPoint)
-    const country = await response.json()
-    return country
-  }
-
-function createCountryCard(country){
- 
-    const continent = document.getElementById('continent-name')
-    continent.textContent = country.continents.join('/')
+export function createCard(country){
 
     const infoContainer = document.getElementById('info-container')
 
@@ -81,9 +68,8 @@ function createCountryCard(country){
     borderButton.textContent = 'Borders'
     let borderCard = document.createElement ('p')
     let borderValues = country.borders
-    console.log(typeof(borderValues))
     console.log(borderValues)
-       try {
+    try {
         borderCard.textContent = borderValues.join(', ')  
        } catch (e) {
            borderCard.textContent = "No borders to this country"
@@ -99,14 +85,6 @@ function createCountryCard(country){
     maps.href = "https://google.com/maps/place/" + country.name.common.replace('', '+')
 
     footer.replaceChildren(borderButton, maps)
-    
+
 }
 
-async function loadCountry(){
-    const country = await getCountry()
-    console.log(country)
-    country.forEach(createCountryCard)
-    // createCountryCard(country)
-}
-
-loadCountry()
