@@ -43,7 +43,7 @@ function displayResult(results){
 
       let content = results.map((list) => {
           //criar os itens da pesquisa e chamar a função que faz o nome clicado preencher a barra de pesquisa
-          return `<li class="country-search"><a class="country-link" href="/html/country.html">${list}</a></li>`
+          return `<li class="country-search"><a class="country-link" href="./html/country.html">${list}</a></li>`
       })
 
       console.log(content)
