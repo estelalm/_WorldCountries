@@ -167,6 +167,7 @@ function search(countries){
         countryList.forEach(function(countryListed){
           countryListed.addEventListener('click', function(){
             countryListed.classList.add('clicked')
+            searchInput.value = ""
               const countryLink = document.querySelector('.clicked')
 
             countries.forEach((countrySelected) =>{

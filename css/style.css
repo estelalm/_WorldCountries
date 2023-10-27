@@ -213,12 +213,15 @@ h3{
 }
 
 
-@media(max-width: 800px){
+@media(max-width: 900px){
     header{
-        width: 64vw;
+        width: 70vw;
     }
     h1{
         font-size: 8vw;
+    }
+    main{
+        width: 80vw;
     }
     .search-container{
         display: flex;
@@ -227,11 +230,11 @@ h3{
         background-color: var(--branco);
         border: solid var(--escuro) 1px;
         height: 6vh;
-        width: 64vw;
+        width: 6px;
         gap: 2%;
     }
     .container{
-        width: 64vw;
+        width: 80vw;
         height: 64vw;
         display: flex;
         border: solid 1px var(--escuro);

@@ -168,3 +168,107 @@ hr{
     border-radius: 1px;
     background-color: var(--escuro);
   }
+
+
+  @media (max-width: 900px) {
+
+    header{
+        display: flex;   
+        width: 80vw;
+        justify-content: space-between;
+    }
+
+    .home{
+        font-size: 6vw;
+        gap: 1vw;
+        padding: 0.4vw;
+    }
+    .home img{
+        height: 8vh;
+    }
+    
+    h1{
+        background-color: var(--escuro);
+        padding: .4vw 2vw;
+        letter-spacing: 0.2vw;
+        color: var(--azul);
+        font-family: var(--texto);
+        place-self: end;
+        height: 10vh;
+        width: 50%;
+        line-height: 8vh;
+        text-align: center;
+    }
+
+    .container{
+        width: 80vw;
+    }
+
+    .info-container .first-row{
+        gap: 1vw;
+        font-size: 4vw;
+    }
+    .smaller{
+        font-size: 3vw;
+    }
+    .info-container .first-row img{
+        height: 6vh;
+        border: solid 2px var(--escuro);
+    }
+    h3{
+        font-size: 4vw;
+    }
+    
+    hr{
+        border: solid 0.8px var(--escuro);
+        margin: 0.2vh 0;
+    }
+    
+    .info{
+        padding: 7vw 1vw;
+        font-size: 5.4vw;
+    }
+    
+    .info-footer{
+        display: flex;
+        justify-content: space-between;
+        height: 6vh;
+        align-items: center;
+        place-self: end;
+        width: 100%;
+    }
+    .info-footer div{
+        height: 100%;
+        width: 40%;
+        position: relative;
+        background-color: var(--escuro);
+        color: var(--branco);
+        text-align: center;
+        font-size: 4vw;
+        line-height: 6vh;
+    }
+    .info-footer div p{
+        height: 10vh;
+        width: 42vw;
+        padding: 1vw;
+        word-wrap: break-word;
+        bottom: 90%;
+        left: 50%;
+        display: none;
+        font-size: 4vw;
+    }
+    .info-footer div:hover > p{
+        display: block;
+    }
+    .info-footer a{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: 2vw;
+        font-size: 4vw;
+    }
+    .info-footer a img {
+        height: 90%;
+    }
+
+  }
