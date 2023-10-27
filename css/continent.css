@@ -177,7 +177,7 @@ main{
     justify-content: space-between;
 }
 .smaller{
-    font-size: 2.6vw;
+    font-size: 2.2vw;
 }
 .info-container .first-row img{
     height: 10vh;
@@ -269,6 +269,11 @@ hr{
     .home img{
         height: 6vh;
     }
+    h1{
+        font-size: 4vw;
+        height: 6vh;
+        line-height: 6vh;
+    }
 
     .container{
         background-color: var(--escuro);
@@ -284,7 +289,7 @@ hr{
         grid-template-rows: 40% 1fr;
         gap: 1%;
         overflow: hidden;
-        height: 28%;
+        height: 24%;
     }
 
     .search-container{
@@ -328,6 +333,7 @@ hr{
 
     .country{
         height: 100%;
+        width: 100px;
         background-color: black;
         background-position: center;
         background-size: cover;
@@ -343,6 +349,9 @@ hr{
         display: grid;
         grid-template-rows: 12% 9% 1px 1fr 10%;
         height: 90%;
+    }
+    .info-container p{
+        font-size: 6vw;
     }
     .info-container .first-row{
         display: flex;

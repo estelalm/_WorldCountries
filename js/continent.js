@@ -27,7 +27,7 @@ function createCountryCard(country){
         infoContainer.replaceChildren(firstRow, ofcName, line, info, footer)
     
         let flagImg = document.createElement('img')
-        flagImg.src= country.flags.png
+        flagImg.src= country.flags.svg
         flagImg.alt = country.flags.alt
     
         let title = document.createElement('h2')
