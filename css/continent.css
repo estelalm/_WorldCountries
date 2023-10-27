@@ -395,14 +395,15 @@ hr{
         border: solid 1px var(--escuro);
         position: absolute;
         color: var(--escuro);
-        height: 10vh;
-        width: 42vw;
+        height: 20vh;
+        width: 46vw;
         padding: 1vw;
         word-wrap: break-word;
         bottom: 90%;
         left: 50%;
         display: none;
         font-size: 4vw;
+        line-height: 4vh;
     }
     .info-footer div:hover > p{
         display: block;
@@ -417,5 +418,4 @@ hr{
     .info-footer a img {
         height: 90%;
     }
-
   }
