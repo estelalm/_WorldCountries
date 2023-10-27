@@ -18,7 +18,7 @@ async function getCountries(){
        let common = countriesNames[0]
        let ofc = countriesNames[1]
        countriesNames[2] = " "
-       countriesNameArray.push(common, ofc)
+       countriesNameArray.push(common)
   })
 
   searchInput.onkeyup = function(){

@@ -247,7 +247,7 @@ h3{
         background-color: var(--branco);
         border: solid var(--escuro) 1px;
         height: 6vh;
-        width: 100%;
+        width: 80vw;
         gap: 2%;
     }
     .search-bar{
